@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { AnimatedDiv, StyledBackgroundInterface } from './PollChoice.types';
+import { FC } from 'react';
 
 export const PollRoot = styled.div`
   border: 1px solid lightgrey;
@@ -10,7 +11,7 @@ export const PollRoot = styled.div`
   cursor: pointer;
 `;
 
-export const StyledBackground = styled.div`
+export const StyledBackground: FC<StyledBackgroundInterface> = styled.div`
   padding: 8px;
   white-space: nowrap;
   display: flex;
@@ -26,11 +27,11 @@ export const StyledBackground = styled.div`
     `}
 `;
 
-export const Img = styled.img`
+export const Img: FC<any> = styled.img`
   margin-left: 8px;
 `;
 
-export const Animate = styled.div`
+export const Animate: FC<AnimatedDiv> = styled.div`
   ${({ open, isSelected }: AnimatedDiv) => css`
     width: ${open ? '40%' : '100%'};
     transform: scale(${open && isSelected ? 0.8 : 1});
@@ -38,11 +39,11 @@ export const Animate = styled.div`
   `}
 `;
 
-export const StyledPercent = styled.div`
+export const StyledPercent: FC = styled.div`
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
 `;
 
-export const Text = styled.span``;
+export const Text: FC = styled.span``;

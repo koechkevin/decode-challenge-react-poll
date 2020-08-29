@@ -7,17 +7,17 @@ type Props = {
   qAndAs: QandAsDocument;
 };
 
-const PollWrapper = styled.div``;
-const Paragraph = styled.p`
+const PollWrapper: FC = styled.div``;
+const Paragraph: FC = styled.p`
   font-size: 16px;
 `;
-const Page = styled.div`
+const Page: FC = styled.div`
   min-height: 90vh;
   display: flex;
   flex-direction: column;
 `;
 
-const Flex1 = styled.div`
+const Flex1: FC = styled.div`
   flex: 1;
   margin: auto;
   display: flex;

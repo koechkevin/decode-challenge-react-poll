@@ -12,17 +12,17 @@ const Question: FC<Props> = (props: Props) => {
   const [selected, setSelected] = useState<number>();
   const [clicking, setClicking] = useState<boolean>(false);
 
-  const total = questionAndAnswer.answers.reduce(
+  const total: number = questionAndAnswer.answers.reduce(
     (previousValue: number, currentValue: Answer) =>
       previousValue + currentValue.votes,
     0
   );
 
-  const highestScore = Math.max(
+  const highestScore: number = Math.max(
     ...questionAndAnswer.answers.map(({ votes }) => votes)
   );
 
-  const onClick = (index: number) => {
+  const onClick = (index: number): void => {
     setQuestionAndAnswer((previousValue: QandA) => ({
       ...previousValue,
       answers: previousValue.answers.map((answer: Answer, idx: number) =>

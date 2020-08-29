@@ -22,7 +22,7 @@ const PollChoice: FC<Props> = (props: Props) => {
     setClicking,
   } = props;
 
-  const onSelect = () => {
+  const onSelect = (): void => {
     if (!alreadyVoted) {
       setClicking(true);
       setTimeout(() => {
