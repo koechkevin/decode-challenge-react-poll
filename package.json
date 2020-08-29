@@ -22,7 +22,6 @@
     "@types/react-dom": "16.8.4",
     "@types/styled-components": "4.1.16",
     "babel-plugin-styled-components": "^1.10.0",
-    "k3v-scripts": "^1.0.4",
     "typescript": "3.5.2"
   },
   "license": "ISC"

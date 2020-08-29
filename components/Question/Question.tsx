@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Props } from './Question.interface';
+import { Props } from './Question.types';
 import { H1, Card, Text } from './Question.styles';
 import PollChoice from '../PollChoice/PollChoice';
 import { Answer, QandA } from '../../types';
