@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledBackgroundInterface } from './PollChoice.types';
+import { AnimatedDiv, StyledBackgroundInterface } from './PollChoice.types';
 
 export const PollRoot = styled.div`
   border: 1px solid lightgrey;
@@ -7,6 +7,7 @@ export const PollRoot = styled.div`
   box-sizing: border-box;
   position: relative;
   margin-bottom: 8px;
+  cursor: pointer;
 `;
 
 export const StyledBackground = styled.div`
@@ -25,7 +26,17 @@ export const StyledBackground = styled.div`
     `}
 `;
 
-export const Img = styled.img`margin-left: 8px;`;
+export const Img = styled.img`
+  margin-left: 8px;
+`;
+
+export const Animate = styled.div`
+  ${({ open, isSelected }: AnimatedDiv) => css`
+    width: ${open ? '40%' : '100%'};
+    transform: scale(${open && isSelected ? 0.8 : 1});
+    transition: all 100ms ease 0s;
+  `}
+`;
 
 export const StyledPercent = styled.div`
   position: absolute;
@@ -33,10 +44,5 @@ export const StyledPercent = styled.div`
   top: 50%;
   transform: translateY(-50%);
 `;
-
-// export const Box = posed.div({
-//   enter: {},
-//   exit: {}
-// });
 
 export const Text = styled.span``;
