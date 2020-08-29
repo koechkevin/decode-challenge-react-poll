@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Props } from './PollChoice.interfaces';
+import { Props } from './PollChoice.types';
+
 import {
   PollRoot,
   StyledBackground,
@@ -8,7 +9,7 @@ import {
   Img,
 } from './PollChoice.styles';
 
-const PollChoice: FC<Props> = (props) => {
+const PollChoice: FC<Props> = (props: Props) => {
   const { isPopular, score, text, onClick, alreadyVoted, isSelected } = props;
   return (
     <PollRoot role="button" onClick={!alreadyVoted ? onClick : undefined}>

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledBackgroundInterface } from './PollChoice.interfaces';
+import { StyledBackgroundInterface } from './PollChoice.types';
 
 export const PollRoot = styled.div`
   border: 1px solid lightgrey;
@@ -33,5 +33,10 @@ export const StyledPercent = styled.div`
   top: 50%;
   transform: translateY(-50%);
 `;
+
+// export const Box = posed.div({
+//   enter: {},
+//   exit: {}
+// });
 
 export const Text = styled.span``;
