@@ -10,6 +10,7 @@ const Question: FC<Props> = (props: Props) => {
   );
 
   const [selected, setSelected] = useState<number>();
+  const [clicking, setClicking] = useState<boolean>(false);
 
   const total = questionAndAnswer.answers.reduce(
     (previousValue: number, currentValue: Answer) =>
@@ -44,6 +45,8 @@ const Question: FC<Props> = (props: Props) => {
             isPopular={votes === highestScore}
             score={Math.round((votes / total) * 100)}
             text={text}
+            clicking={clicking}
+            setClicking={setClicking}
           />
         )
       )}
