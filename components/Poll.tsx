@@ -1,14 +1,50 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
-import { QandAsDocument } from '../types';
+import { QandAsDocument, QandA } from '../types';
+import Question from './Question/Question';
 
 type Props = {
-  qandas: QandAsDocument /* q and a's -- questions and answers document */;
+  qAndAs: QandAsDocument;
 };
 
 const PollWrapper = styled.div``;
+const Paragraph = styled.p`
+  font-size: 16px;
+`;
+const Page = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
-export default function Poll({ qandas }: Props) {
-  console.log('questions and answers: ', qandas);
-  return <PollWrapper>The Poll implementation goes here</PollWrapper>;
-}
+const Flex1 = styled.div`
+  flex: 1;
+  margin: auto;
+  display: flex;
+  align-items: center;
+`;
+
+const Poll: FC<Props> = ({ qAndAs }) => {
+  const { questions } = qAndAs;
+  return (
+    <PollWrapper>
+      {questions.map((question: QandA, idx: number) => (
+        <Page key={idx}>
+          <Paragraph>
+            Here some text that is on the page in a paragraph tag. The poll will
+            appear within the context below.
+          </Paragraph>
+          <Flex1>
+            <Question questionAndAnswer={question} />
+          </Flex1>
+          <Paragraph>
+            Here is the rest of the text in the page. We just have something
+            down here for context to see it in.
+          </Paragraph>
+        </Page>
+      ))}
+    </PollWrapper>
+  );
+};
+
+export default Poll;
