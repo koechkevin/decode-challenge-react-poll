@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { AnimatedDiv, StyledBackgroundInterface } from './PollChoice.types';
-import { FC } from 'react';
+import {FC, ImgHTMLAttributes} from 'react';
 
 export const PollRoot = styled.div`
   border: 1px solid lightgrey;
@@ -27,7 +27,7 @@ export const StyledBackground: FC<StyledBackgroundInterface> = styled.div`
     `}
 `;
 
-export const Img: FC<any> = styled.img`
+export const Img: FC<ImgHTMLAttributes<HTMLImageElement>> = styled.img`
   margin-left: 8px;
 `;
 
